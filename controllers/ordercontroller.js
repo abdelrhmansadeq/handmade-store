@@ -4,7 +4,7 @@ const pool = require('../db');
 const createOrder = async (req, res) => {
     const client = await pool.connect();
     try {
-        const { address, phone } = req.body;
+        const { address, phone, notes } = req.body;
         const userId = req.user.id;
 
         if (!address || !phone) {
@@ -52,9 +52,9 @@ const createOrder = async (req, res) => {
 
         // إنشاء الطلب
         const orderResult = await client.query(
-            `INSERT INTO orders (customer_id, total_price, address, phone, status)
-             VALUES ($1, $2, $3, $4, 'pending') RETURNING *`,
-            [userId, total.toFixed(2), address, phone]
+            `INSERT INTO orders (customer_id, total_price, address, phone, notes, status)
+             VALUES ($1, $2, $3, $4, $5, 'pending') RETURNING *`,
+            [userId, total.toFixed(2), address, phone, notes || null]
         );
         const orderId = orderResult.rows[0].id;
 

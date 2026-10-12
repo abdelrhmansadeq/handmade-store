@@ -1,11 +1,12 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Cairo', sans-serif;
+    background-color: #FAF6F0;
 }
 
-/* لتحسين عرض النص العربي */
-html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
 }

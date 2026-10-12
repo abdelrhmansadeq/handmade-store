@@ -7,10 +7,11 @@ import Cart from './pages/Cart';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Checkout from './pages/Checkout';
+import MyOrders from './pages/MyOrders';
 
 function App() {
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-orange-50">
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/checkout" element={<Checkout />} />
+                <Route path="/my-orders" element={<MyOrders />} />
             </Routes>
         </div>
     );
