@@ -25,3 +25,4 @@ Thumbs.db
 
 # Misc
 coverage/
+api/index.js
