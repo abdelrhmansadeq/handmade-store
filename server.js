@@ -25,6 +25,15 @@ const authRoutes = require('./routes/auth');
 
 // Mount Routes
 app.use('/api/auth', authRoutes);
+const productRoutes = require('./routes/products');
+app.use('/api/products', productRoutes);
+const categoryRoutes = require('./routes/categories');
+app.use('/api/categories', categoryRoutes);
+const cartRoutes = require('./routes/cart');
+app.use('/api/cart', cartRoutes);
+const orderRoutes = require('./routes/orders');
+app.use('/api/orders', orderRoutes);
+//-------------------------------------------------------
 app.get('/api/health', (req, res) => {
     res.json({
         status: 'OK',
