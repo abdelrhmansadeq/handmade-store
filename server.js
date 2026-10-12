@@ -20,6 +20,11 @@ app.use(express.json());
 // ================================
 // 4. Routes
 // ================================
+// Import Routes
+const authRoutes = require('./routes/auth');
+
+// Mount Routes
+app.use('/api/auth', authRoutes);
 app.get('/api/health', (req, res) => {
     res.json({
         status: 'OK',
