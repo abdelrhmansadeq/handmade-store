@@ -60,7 +60,8 @@ function Products() {
                 {products.map((product) => (
                     <div
                         key={product.id}
-                        className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden"
+                        onClick={() => window.location.href = `/products/${product.id}`}
+                        className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden cursor-pointer"
                     >
                         {/* Image */}
                         <div className="h-48 bg-gray-200 flex items-center justify-center">
